@@ -10,17 +10,15 @@ namespace glass
 	{
 	private:
 		int width,
-			height,
-			xFigure = 0,
-			yFigure = 0;
-		int* state;
+			height;
+		bool* state;
 
 	public:
 		Glass(int width, int height)
 		{
 			this->width = width;
 			this->height = height;
-			this->state = new int[width * height];
+			this->state = new bool[width * height];
 			this->initState();
 		};
 
@@ -40,8 +38,6 @@ namespace glass
 		};
 
 		void initState();
-
-		void setFigureY(int y);
 
 		void printOut();
 	};

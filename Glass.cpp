@@ -28,12 +28,7 @@ void Glass::initState()
 	{
 		for (int j = 0; j < this->width; j++)
 		{
-			this->state[i * this->width + j] = 0;
+			this->state[i * this->width + j] = false;
 		}
 	}
-}
-
-void Glass::setFigureY(int y)
-{
-	this->yFigure = y;
 }

@@ -33,6 +33,21 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Display.h" />
+		<Unit filename="Glass.cpp" />
+		<Unit filename="Glass.h" />
+		<Unit filename="ITetraminoFigure.h" />
+		<Unit filename="JTetraminoFigure.h" />
+		<Unit filename="LTetraminoFigure.h" />
+		<Unit filename="OTetraminoFigure.h" />
+		<Unit filename="Rotator.cpp" />
+		<Unit filename="Rotator.h" />
+		<Unit filename="STetraminoFigure.h" />
+		<Unit filename="TTetraminoFigure.h" />
+		<Unit filename="TetraminoFigure.cpp" />
+		<Unit filename="TetraminoFigure.h" />
+		<Unit filename="TetraminoSquare.h" />
+		<Unit filename="ZTetraminoFigure.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

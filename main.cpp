@@ -10,6 +10,7 @@
 #include "Glass.h"
 #include "Rotator.h"
 #include "Display.h"
+#include "Coordinator.h"
 using namespace std;
 using namespace tetramino_figure;
 using namespace glass;
@@ -25,6 +26,12 @@ int main()
     ZTetraminoFigure ZFigure(3);
     STetraminoFigure SFigure(3);
     OTetraminoFigure OFigure(2);
+
+    Coordinator coordinator(glass.getWidth(), glass.getHeight());
+    coordinator.setTetraminoFigureSize(LFigure.getSize());
+
+    coordinator.setXTetraminoFigure(int(glass.getWidth() / 2) - 1);
+
 
     //glass.printOut();
 
