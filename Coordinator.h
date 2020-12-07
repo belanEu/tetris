@@ -1,5 +1,12 @@
+#ifndef HEADER_COORDINATOR_H
+#define HEADER_COORDINATOR_H
+
 namespace controller
 {
+    /*
+     TODO: maybe its need to hold the previous coordinates of the tetramino figure
+     just to clear the figure presentation in glass state by them.
+     */
     class Coordinator
     {
     protected:
@@ -33,3 +40,5 @@ namespace controller
         void setYTetraminoFigure(int y);
     };
 }
+
+#endif // HEADER_COORDINATOR_H

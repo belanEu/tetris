@@ -11,6 +11,7 @@
 #include "Rotator.h"
 #include "Display.h"
 #include "Coordinator.h"
+#include "Painter.h"
 using namespace std;
 using namespace tetramino_figure;
 using namespace glass;
@@ -30,7 +31,9 @@ int main()
     Coordinator coordinator(glass.getWidth(), glass.getHeight());
     coordinator.setTetraminoFigureSize(LFigure.getSize());
 
-    coordinator.setXTetraminoFigure(int(glass.getWidth() / 2) - 1);
+    coordinator.setXTetraminoFigure(int(glass.getWidth() / 2) - int(LFigure.getSize() / 2));
+
+    Painter::paint(LFigure, glass, coordinator);
 
 
     //glass.printOut();

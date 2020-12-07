@@ -8,7 +8,7 @@ void Glass::printOut()
 		cout << '|';
 		for (int j = 0; j < this->width; j++)
 		{
-			cout << ' ' << this->state[i * this->width + j] << ' ';
+			cout << ' ' << (this->state[i * this->width + j] ? '1' : ' ') << ' ';
 		}
 		cout << '|';
 

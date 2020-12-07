@@ -8,11 +8,14 @@ namespace glass
 {
 	class Glass
 	{
-	private:
+	protected:
 		int width,
 			height;
 		bool* state;
 
+    /*
+    methods:
+    */
 	public:
 		Glass(int width, int height)
 		{
@@ -37,9 +40,15 @@ namespace glass
 			return this->height;
 		};
 
-		void initState();
+		bool* getState()
+		{
+		    return this->state;
+		}
 
 		void printOut();
+
+    protected:
+		void initState();
 	};
 }
 

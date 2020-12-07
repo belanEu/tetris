@@ -9,7 +9,7 @@ void Coordinator::setXTetraminoFigure(int x)
     }
     else if (x > this->glassWidth - this->tetraminoFigureSize)
     {
-        this->xTetraminoFigure = this->glassWidth - this->tetraminoFigureSize
+        this->xTetraminoFigure = this->glassWidth - this->tetraminoFigureSize;
     }
     else
     {
@@ -25,7 +25,7 @@ void Coordinator::setYTetraminoFigure(int y)
     }
     else if (y > this->glassHeight - this->tetraminoFigureSize)
     {
-        this->yTetraminoFigure = this->glassHeight - this->tetraminoFigureSize
+        this->yTetraminoFigure = this->glassHeight - this->tetraminoFigureSize;
     }
     else
     {

@@ -4,7 +4,7 @@
 namespace tetramino_figure
 {
 	/**
-	* Class TetraminoSquare describes a part (which is square) of a termino figure (see class TerminoFigure).
+	* Class TetraminoSquare describes a part (which is square) of a tetramino figure (see class TetraminoFigure).
 	*/
 	class TetraminoSquare
 	{
