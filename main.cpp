@@ -12,6 +12,7 @@
 #include "Display.h"
 #include "Coordinator.h"
 #include "Stacker.h"
+#include "MovementAnalyzer.h"
 using namespace std;
 using namespace tetramino_figure;
 using namespace glass;
@@ -38,18 +39,21 @@ int main()
     glassInstance.printOut();
 
     /*
-     TODO: store somewhere a state, which is an array on unsigned short numbers.
-     each number represents the corresponding line of the glass.
-     then multiply by bitwise operation current and next numbers:
-     if ((currentNum & nextNum) == 0)
-     {
-        -> current number goes lower to the next line
-     }
-     else
-     {
-        -> current number stays at the current line
-     }
-     */
+       TODO: test MovementAnalyzer!
+    */
+    MovementAnalyzer movementAnalyzer;
+
+    movementAnalyzer.analyzeStep(glassInstance, LFigure, coordinator);
+    bool iCanGoThere = movementAnalyzer.getResult();
+
+    if (iCanGoThere)
+    {
+        // TODO: toStack the figure into the glass
+    }
+
+    movementAnalyzer.resetResult();
+
+
     cout << "The bit set of 5: " << bitset<10>(5).to_string() << endl;
     cout << "The bit set to number: " << (unsigned short)bitset<10>("1111111111").to_ulong() << endl;
 

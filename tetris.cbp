@@ -41,11 +41,13 @@
 		<Unit filename="ITetraminoFigure.h" />
 		<Unit filename="JTetraminoFigure.h" />
 		<Unit filename="LTetraminoFigure.h" />
+		<Unit filename="MovementAnalyzer.cpp" />
+		<Unit filename="MovementAnalyzer.h" />
 		<Unit filename="OTetraminoFigure.h" />
-		<Unit filename="Painter.h" />
 		<Unit filename="Rotator.cpp" />
 		<Unit filename="Rotator.h" />
 		<Unit filename="STetraminoFigure.h" />
+		<Unit filename="Stacker.h" />
 		<Unit filename="TTetraminoFigure.h" />
 		<Unit filename="TetraminoFigure.cpp" />
 		<Unit filename="TetraminoFigure.h" />

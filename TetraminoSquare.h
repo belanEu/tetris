@@ -64,6 +64,11 @@ namespace tetramino_figure
 		{
 			this->color = color;
 		};
+
+		bool isColored()
+		{
+		    return this->color != '0';
+		}
 	};
 }
 
