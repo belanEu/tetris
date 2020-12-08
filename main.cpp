@@ -11,7 +11,7 @@
 #include "Rotator.h"
 #include "Display.h"
 #include "Coordinator.h"
-#include "Painter.h"
+#include "Stacker.h"
 using namespace std;
 using namespace tetramino_figure;
 using namespace glass;
@@ -19,7 +19,7 @@ using namespace controller;
 
 int main()
 {
-    Glass glass(10, 20);
+    Glass glassInstance(10, 20);
     LTetraminoFigure LFigure(3);
     JTetraminoFigure JFigure(3);
     ITetraminoFigure IFigure(3);
@@ -28,15 +28,14 @@ int main()
     STetraminoFigure SFigure(3);
     OTetraminoFigure OFigure(2);
 
-    Coordinator coordinator(glass.getWidth(), glass.getHeight());
+    Coordinator coordinator(glassInstance.getWidth(), glassInstance.getHeight());
     coordinator.setTetraminoFigureSize(LFigure.getSize());
 
-    coordinator.setXTetraminoFigure(int(glass.getWidth() / 2) - int(LFigure.getSize() / 2));
+    coordinator.setXTetraminoFigure(int(glassInstance.getWidth() / 2) - int(LFigure.getSize() / 2) - 1);
 
-    Painter::paint(LFigure, glass, coordinator);
+    Stacker::toStack(&glassInstance, LFigure, coordinator);
 
-
-    //glass.printOut();
+    glassInstance.printOut();
 
     /*
      TODO: store somewhere a state, which is an array on unsigned short numbers.

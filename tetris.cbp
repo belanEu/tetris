@@ -33,6 +33,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Coordinator.cpp" />
+		<Unit filename="Coordinator.h" />
 		<Unit filename="Display.h" />
 		<Unit filename="Glass.cpp" />
 		<Unit filename="Glass.h" />
@@ -40,6 +42,7 @@
 		<Unit filename="JTetraminoFigure.h" />
 		<Unit filename="LTetraminoFigure.h" />
 		<Unit filename="OTetraminoFigure.h" />
+		<Unit filename="Painter.h" />
 		<Unit filename="Rotator.cpp" />
 		<Unit filename="Rotator.h" />
 		<Unit filename="STetraminoFigure.h" />

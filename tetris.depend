@@ -52,7 +52,7 @@
 	"TetraminoFigure.h"
 	"Glass.h"
 
-1607378372 source:d:\block_projects\tetris\glass.cpp
+1607378569 source:d:\block_projects\tetris\glass.cpp
 	"Glass.h"
 
 1607283434 source:d:\block_projects\tetris\rotator.cpp
@@ -61,7 +61,7 @@
 1607283446 source:d:\block_projects\tetris\tetraminofigure.cpp
 	"TetraminoFigure.h"
 
-1607377461 d:\block_projects\tetris\coordinator.h
+1607378969 d:\block_projects\tetris\coordinator.h
 
 1607378530 d:\block_projects\tetris\painter.h
 	"TetraminoFigure.h"
