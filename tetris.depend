@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1607378251 source:d:\block_projects\tetris\main.cpp
+1607810700 source:d:\block_projects\tetris\main.cpp
 	<iostream>
 	<bitset>
 	"LTetraminoFigure.h"
@@ -13,7 +13,8 @@
 	"Rotator.h"
 	"Display.h"
 	"Coordinator.h"
-	"Painter.h"
+	"Stacker.h"
+	"MovementAnalyzer.h"
 
 1607283508 d:\block_projects\tetris\ltetraminofigure.h
 	"TetraminoFigure.h"
@@ -22,7 +23,7 @@
 	"TetraminoSquare.h"
 	<iostream>
 
-1607377366 d:\block_projects\tetris\tetraminosquare.h
+1607461966 d:\block_projects\tetris\tetraminosquare.h
 
 1607283477 d:\block_projects\tetris\jtetraminofigure.h
 	"TetraminoFigure.h"
@@ -42,17 +43,17 @@
 1607283516 d:\block_projects\tetris\otetraminofigure.h
 	"TetraminoFigure.h"
 
-1607377279 d:\block_projects\tetris\glass.h
+1607855214 d:\block_projects\tetris\glass.h
 	"TetraminoFigure.h"
 
 1607283443 d:\block_projects\tetris\rotator.h
 	"TetraminoFigure.h"
 
-1607287154 d:\block_projects\tetris\display.h
+1607809782 d:\block_projects\tetris\display.h
 	"TetraminoFigure.h"
 	"Glass.h"
 
-1607378569 source:d:\block_projects\tetris\glass.cpp
+1607792924 source:d:\block_projects\tetris\glass.cpp
 	"Glass.h"
 
 1607283434 source:d:\block_projects\tetris\rotator.cpp
@@ -61,7 +62,7 @@
 1607283446 source:d:\block_projects\tetris\tetraminofigure.cpp
 	"TetraminoFigure.h"
 
-1607378969 d:\block_projects\tetris\coordinator.h
+1607855795 d:\block_projects\tetris\coordinator.h
 
 1607378530 d:\block_projects\tetris\painter.h
 	"TetraminoFigure.h"
@@ -69,5 +70,18 @@
 	"Coordinator.h"
 
 1607378298 source:d:\block_projects\tetris\coordinator.cpp
+	"Coordinator.h"
+
+1607855101 source:d:\block_projects\tetris\movementanalyzer.cpp
+	"MovementAnalyzer.h"
+
+1607855101 d:\block_projects\tetris\movementanalyzer.h
+	"TetraminoFigure.h"
+	"Glass.h"
+	"Coordinator.h"
+
+1607809884 d:\block_projects\tetris\stacker.h
+	"TetraminoFigure.h"
+	"Glass.h"
 	"Coordinator.h"
 

@@ -31,6 +31,11 @@ namespace controller
             return this->yTetraminoFigure;
         }
 
+        int getTetraminoFigureSize()
+        {
+            return this->tetraminoFigureSize;
+        }
+
         void setTetraminoFigureSize(int size)
         {
             this->tetraminoFigureSize = size;

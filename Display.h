@@ -8,13 +8,13 @@ namespace controller
 	class Display
 	{
 	public:
-		static void displayFigure(TetraminoFigure* figure)
+		static void displayFigure(TetraminoFigure figure)
 		{
-			for (int i = 0; i < figure->getSize(); i++)
+			for (int i = 0; i < figure.getSize(); i++)
 			{
-				for (int j = 0; j < figure->getSize(); j++)
+				for (int j = 0; j < figure.getSize(); j++)
 				{
-					cout << ' ' << figure->getTetraminoSquares()[i * figure->getSize() + j].getColor() << ' ';
+					cout << ' ' << figure.getTetraminoSquares()[i * figure.getSize() + j].getColor() << ' ';
 				}
 				cout << endl;
 			}

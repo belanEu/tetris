@@ -4,7 +4,7 @@ using namespace controller;
 using namespace tetramino_figure;
 using namespace glass;
 
-void MovementAnalyzer::analyzeStep(Glass glassInstance, TetraminoFigure figure, Coordinator coordinator)
+void MovementAnalyzer::analyzeStep(Glass &glassInstance, TetraminoFigure figure, Coordinator coordinator)
 {
     unsigned int* figureRows = this->numericViewOfFigure(figure, coordinator.getXTetraminoFigure(), glassInstance.getWidth());
 
@@ -48,7 +48,7 @@ unsigned int* MovementAnalyzer::numericViewOfFigure(TetraminoFigure figure, int 
 /**
     Build numeric view of rows where current figure stands without actually considering figure.
 */
-unsigned int* MovementAnalyzer::numericViewOfSomeRowsWhithoutFigure(Glass glassInstance, int yTetraminoFigure, int figureSize)
+unsigned int* MovementAnalyzer::numericViewOfSomeRowsWhithoutFigure(Glass &glassInstance, int yTetraminoFigure, int figureSize)
 {
     unsigned int* result = new unsigned int[figureSize];
     unsigned int bit = 1;
@@ -64,17 +64,17 @@ unsigned int* MovementAnalyzer::numericViewOfSomeRowsWhithoutFigure(Glass glassI
             {
                 tmp = bit << (glassInstance.getWidth() - j - 1);
             }
-            result[i % yTetraminoFigure] += tmp;
+            result[i - yTetraminoFigure] += tmp;
         }
     }
 
     return result;
 }
 
-unsigned int* MovementAnalyzer::initializeByZero(unsigned int* array, int size)
+void MovementAnalyzer::initializeByZero(unsigned int* arr, int s)
 {
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < s; i++)
     {
-        array[i] = 0;
+        arr[i] = 0;
     }
 }

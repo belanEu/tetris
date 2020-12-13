@@ -3,12 +3,19 @@ using namespace glass;
 
 void Glass::printOut()
 {
+    cout << ' ';
+    for (int i = 0; i < this->width; i++)
+    {
+        cout << ' ' << i << ' ';
+    }
+    cout << ' ' << endl;
+
 	for (int i = 0; i < this->height; i++)
 	{
 		cout << '|';
 		for (int j = 0; j < this->width; j++)
 		{
-			cout << ' ' << (this->state[i * this->width + j] ? '1' : ' ') << ' ';
+			cout << ' ' << this->state[i * this->width + j] << ' ';
 		}
 		cout << '|';
 

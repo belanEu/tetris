@@ -45,6 +45,11 @@ namespace glass
 		    return this->state;
 		}
 
+		void setIntoState(int index, bool value)
+		{
+		    this->state[index] = value;
+		}
+
 		void printOut();
 
     protected:

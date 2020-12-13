@@ -13,14 +13,14 @@ namespace controller
     class Stacker
     {
     public:
-        static void toStack(Glass* glassInstance, TetraminoFigure figure, Coordinator coordinator)
+        static void toStack(Glass &glassInstance, TetraminoFigure figure, Coordinator coordinator)
         {
             for (int i = 0; i < figure.getSize(); i++)
             {
                 for (int j = 0; j < figure.getSize(); j++)
                 {
-                    int index = (coordinator.getYTetraminoFigure() + i) * glassInstance->getWidth() + (coordinator.getXTetraminoFigure() + j);
-                    glassInstance->getState()[index] = figure.getTetraminoSquares()[i * figure.getSize() + j].getColor() == '1';
+                    int index = (coordinator.getYTetraminoFigure() + i) * glassInstance.getWidth() + (coordinator.getXTetraminoFigure() + j);
+                    glassInstance.setIntoState(index, figure.getTetraminoSquares()[i * figure.getSize() + j].isColored());
                 }
             }
         }
