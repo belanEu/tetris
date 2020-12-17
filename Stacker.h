@@ -24,6 +24,18 @@ namespace controller
                 }
             }
         }
+
+        static void toDelete(Glass &glassInstance, TetraminoFigure figure, Coordinator coordinator)
+        {
+            for (int i = 0; i < figure.getSize(); i++)
+            {
+                for (int j = 0; j < figure.getSize(); j++)
+                {
+                    int index = (coordinator.getYTetraminoFigure() + i) * glassInstance.getWidth() + (coordinator.getXTetraminoFigure() + j);
+                    glassInstance.setIntoState(index, false);
+                }
+            }
+        }
     };
 }
 

@@ -68,6 +68,8 @@ int main()
 
     if (movementAnalyzer.getResult())
     {
+        Stacker::toDelete(glassInstance, LFigure, coordinator);
+
         cout << endl << "Wow!" << endl;
         coordinator.setTetraminoFigureSize(testCoordinator.getTetraminoFigureSize());
         coordinator.setXTetraminoFigure(testCoordinator.getXTetraminoFigure());
