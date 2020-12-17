@@ -6,15 +6,29 @@ using namespace glass;
 
 void MovementAnalyzer::analyzeStep(Glass &glassInstance, TetraminoFigure figure, Coordinator coordinator)
 {
-    unsigned int* figureRows = this->numericViewOfFigure(figure, coordinator.getXTetraminoFigure(), glassInstance.getWidth());
-
-    unsigned int* glassRows = this->numericViewOfSomeRowsWhithoutFigure(glassInstance, coordinator.getYTetraminoFigure(), figure.getSize());
-
-    this->success = true;
-
-    for (int i = 0; i < figure.getSize(); i++)
+    if (!this->coloredSquaresAreOutOfBorders(
+                                            figure,
+                                            coordinator.getXTetraminoFigure(),
+                                            coordinator.getYTetraminoFigure(),
+                                            glassInstance.getWidth(),
+                                            glassInstance.getHeight()
+                                            )
+        )
     {
-        this->success = this->success && (figureRows[i] & glassRows[i]) == 0;
+        unsigned int* figureRows = this->numericViewOfFigure(figure, coordinator.getXTetraminoFigure(), glassInstance.getWidth());
+
+        unsigned int* glassRows = this->numericViewOfSomeRowsWhithoutFigure(glassInstance, coordinator.getYTetraminoFigure(), figure.getSize());
+
+        this->success = true;
+
+        for (int i = 0; i < figure.getSize(); i++)
+        {
+            this->success = this->success && (figureRows[i] & glassRows[i]) == 0;
+        }
+    }
+    else
+    {
+        this->success = false;
     }
 }
 
@@ -69,6 +83,56 @@ unsigned int* MovementAnalyzer::numericViewOfSomeRowsWhithoutFigure(Glass &glass
     }
 
     return result;
+}
+
+bool MovementAnalyzer::coloredSquaresAreOutOfBorders(
+                                                     TetraminoFigure figure,
+                                                     int xTetraminoFigure,
+                                                     int yTetraminoFigure,
+                                                     int glassWidth,
+                                                     int glassHeight
+                                                     )
+{
+    // to check the first vertical
+    for (int i = 0; i < figure.getSize(); i++)
+    {
+        if (figure.getTetraminoSquares()[i * figure.getSize()].isColored() && xTetraminoFigure == 0)
+        {
+            return true;
+        }
+    }
+    // to check the last vertical
+    for (int i = 0; i < figure.getSize(); i++)
+    {
+        if (
+            figure.getTetraminoSquares()[i * figure.getSize() + figure.getSize() - 1].isColored()
+            && xTetraminoFigure == glassWidth - 1
+            )
+        {
+            return true;
+        }
+    }
+    // to check the first horizontal
+    for (int j = 0; j < figure.getSize(); j++)
+    {
+        if (figure.getTetraminoSquares()[j].isColored() && yTetraminoFigure == 0)
+        {
+            return true;
+        }
+    }
+    // to check the last horizontal
+    for (int j = 0; j < figure.getSize(); j++)
+    {
+        if (
+            figure.getTetraminoSquares()[(figure.getSize() - 1) * figure.getSize() + j].isColored()
+            && yTetraminoFigure == glassHeight - 1
+            )
+        {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 void MovementAnalyzer::initializeByZero(unsigned int* arr, int s)

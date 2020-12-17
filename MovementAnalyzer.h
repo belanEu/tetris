@@ -36,6 +36,13 @@ namespace controller
     protected:
         unsigned int* numericViewOfFigure(TetraminoFigure figure, int xTetraminoFigure, int glassWidth);
         unsigned int* numericViewOfSomeRowsWhithoutFigure(Glass &glassInstance, int yTetraminoFigure, int figureSize);
+        bool coloredSquaresAreOutOfBorders(
+                                           TetraminoFigure figure,
+                                           int xTetraminoFigure,
+                                           int yTetraminoFigure,
+                                           int glassWidth,
+                                           int glassHeight
+                                           );
         void initializeByZero(unsigned int* arr, int s);
 
     };

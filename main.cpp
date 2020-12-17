@@ -20,7 +20,7 @@ using namespace controller;
 
 int main()
 {
-    Glass glassInstance(10, 20);
+    Glass glassInstance(12, 22);
     LTetraminoFigure LFigure(3);
     JTetraminoFigure JFigure(3);
     ITetraminoFigure IFigure(3);
@@ -31,10 +31,10 @@ int main()
 
     Coordinator coordinator(glassInstance.getWidth(), glassInstance.getHeight());
 
-    // step 1: O Figure stays on x=4, y=3
+    // step 1: O Figure stays on x=5, y=4
     coordinator.setTetraminoFigureSize(OFigure.getSize());
     coordinator.setXTetraminoFigure(int(glassInstance.getWidth() / 2) - int(OFigure.getSize() / 2) - (OFigure.getSize() & 1));
-    coordinator.setYTetraminoFigure(3);
+    coordinator.setYTetraminoFigure(4);
 
     Stacker::toStack(glassInstance, OFigure, coordinator);
 
@@ -43,10 +43,10 @@ int main()
 
     cout << endl << endl << endl;
 
-    // step 2: L Figure stays on x=3, y=0
+    // step 2: L Figure stays on x=4, y=1
     coordinator.setTetraminoFigureSize(LFigure.getSize());
     coordinator.setXTetraminoFigure(int(glassInstance.getWidth() / 2) - int(LFigure.getSize() / 2) - (LFigure.getSize() & 1));
-    coordinator.setYTetraminoFigure(0);
+    coordinator.setYTetraminoFigure(1);
 
     Stacker::toStack(glassInstance, LFigure, coordinator);
 
@@ -55,7 +55,7 @@ int main()
 
     cout << endl << endl << endl;
 
-    // step 3: L Figure goes to x=3, y=1 using testCoordinator and moves back
+    // step 3: L Figure goes to x=2, y=2 using testCoordinator
     Coordinator testCoordinator(glassInstance.getWidth(), glassInstance.getHeight());
     testCoordinator.setTetraminoFigureSize(coordinator.getTetraminoFigureSize());
     testCoordinator.setXTetraminoFigure(coordinator.getXTetraminoFigure() - 2);
