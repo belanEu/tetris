@@ -13,10 +13,7 @@ namespace glass
 			height;
 		bool* state;
 
-    /*
-    methods:
-    */
-	public:
+    public:
 		Glass(int width, int height)
 		{
 			this->width = width;

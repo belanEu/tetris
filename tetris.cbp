@@ -43,6 +43,8 @@
 		<Unit filename="LTetraminoFigure.h" />
 		<Unit filename="MovementAnalyzer.cpp" />
 		<Unit filename="MovementAnalyzer.h" />
+		<Unit filename="MovementMaker.cpp" />
+		<Unit filename="MovementMaker.h" />
 		<Unit filename="OTetraminoFigure.h" />
 		<Unit filename="Rotator.cpp" />
 		<Unit filename="Rotator.h" />
