@@ -39,7 +39,9 @@ int main()
     Stacker::toStack(glassInstance, OFigure, coordinator);
 
     cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-    glassInstance.printOut();
+    //glassInstance.printOut();
+    Display::displayGlass(glassInstance);
+
 
     cout << endl << endl << endl;
 
@@ -51,7 +53,9 @@ int main()
     Stacker::toStack(glassInstance, LFigure, coordinator);
 
     cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-    glassInstance.printOut();
+    //glassInstance.printOut();
+
+    Display::displayGlass(glassInstance);
 
     cout << endl << endl << endl;
 
@@ -77,7 +81,8 @@ int main()
         Stacker::toStack(glassInstance, LFigure, coordinator);
 
         cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-        glassInstance.printOut();
+        //glassInstance.printOut();
+        Display::displayGlass(glassInstance);
 
         cout << endl << endl << endl;
     }

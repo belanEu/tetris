@@ -50,8 +50,6 @@ namespace glass
 		    this->state[index] = value;
 		}
 
-		void printOut();
-
     protected:
 		void initState();
 	};
