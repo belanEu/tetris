@@ -13,6 +13,7 @@
 #include "Coordinator.h"
 #include "Stacker.h"
 #include "MovementAnalyzer.h"
+#include "MovementMaker.h"
 using namespace std;
 using namespace tetramino_figure;
 using namespace glass;
@@ -21,6 +22,7 @@ using namespace controller;
 int main()
 {
     Glass glassInstance(12, 22);
+    MovementMaker movementMaker;
     LTetraminoFigure LFigure(3);
     JTetraminoFigure JFigure(3);
     ITetraminoFigure IFigure(3);
@@ -36,6 +38,54 @@ int main()
     coordinator.setXTetraminoFigure(int(glassInstance.getWidth() / 2) - int(OFigure.getSize() / 2) - (OFigure.getSize() & 1));
     coordinator.setYTetraminoFigure(4);
 
+    Stacker::toStack(glassInstance, OFigure, coordinator);
+
+    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
+    Display::displayGlassParametrs(glassInstance);
+    Display::displayGlass(glassInstance);
+    cout << endl << endl << endl;
+
+    movementMaker.stepDown(glassInstance, OFigure, coordinator);
+
+    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
+    Display::displayGlassParametrs(glassInstance);
+    Display::displayGlass(glassInstance);
+    cout << endl << endl << endl;
+
+
+    movementMaker.stepDown(glassInstance, OFigure, coordinator);
+
+    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
+    Display::displayGlassParametrs(glassInstance);
+    Display::displayGlass(glassInstance);
+    cout << endl << endl << endl;
+
+
+    movementMaker.stepLeft(glassInstance, OFigure, coordinator);
+
+    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
+    Display::displayGlassParametrs(glassInstance);
+    Display::displayGlass(glassInstance);
+    cout << endl << endl << endl;
+
+
+    movementMaker.stepLeft(glassInstance, OFigure, coordinator);
+
+    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
+    Display::displayGlassParametrs(glassInstance);
+    Display::displayGlass(glassInstance);
+    cout << endl << endl << endl;
+
+
+    movementMaker.stepLeft(glassInstance, OFigure, coordinator);
+
+    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
+    Display::displayGlassParametrs(glassInstance);
+    Display::displayGlass(glassInstance);
+
+    cout << endl << endl << endl;
+
+/*
     Stacker::toStack(glassInstance, OFigure, coordinator);
 
     cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;

@@ -1,6 +1,4 @@
-#include "TetraminoFigure.h"
 #include "Glass.h"
-using namespace tetramino_figure;
 using namespace glass;
 
 namespace controller
@@ -46,6 +44,11 @@ namespace controller
                 cout << "___";
             }
             cout << '|';
+		}
+
+		static void displayGlassParametrs(Glass glassInstance)
+		{
+		    cout << "\n\nGlass width: " << glassInstance.getWidth() << ", height: " << glassInstance.getHeight() << "\n\n";
 		}
 	};
 }

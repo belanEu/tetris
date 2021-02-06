@@ -22,11 +22,6 @@ namespace glass
 			this->initState();
 		};
 
-		~Glass()
-		{
-		    delete[] this->state;
-		}
-
 		int getWidth()
 		{
 			return this->width;

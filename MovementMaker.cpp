@@ -9,19 +9,20 @@ void MovementMaker::makeStep(
                              Coordinator next
                              )
 {
+    Stacker::toDelete(glassInstance, figure, current);
     this->movementAnalyzer->analyzeStep(glassInstance, figure, next);
+    cout << endl << "Movement Analyzer result: " << this->movementAnalyzer->getResult() << endl;
 
     if (this->movementAnalyzer->getResult())
     {
-        Stacker::toDelete(glassInstance, figure, coordinator);
+        cout << "\n\nhey\n\n";
 
-        coordinator.setTetraminoFigureSize(next.getTetraminoFigureSize());
-        coordinator.setXTetraminoFigure(next.getXTetraminoFigure());
-        coordinator.setYTetraminoFigure(next.getYTetraminoFigure());
-
-        Stacker::toStack(glassInstance, figure, coordinator);
+        current.setTetraminoFigureSize(next.getTetraminoFigureSize());
+        current.setXTetraminoFigure(next.getXTetraminoFigure());
+        current.setYTetraminoFigure(next.getYTetraminoFigure());
     }
 
+    Stacker::toStack(glassInstance, figure, current);
     this->movementAnalyzer->resetResult();
 }
 

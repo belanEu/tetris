@@ -23,11 +23,6 @@ namespace controller
             this->movementAnalyzer = new MovementAnalyzer;
         }
 
-        ~MovementMaker()
-        {
-            delete this->movementAnalyzer;
-        }
-
         void makeStep(
                       Glass &glassInstance,
                       TetraminoFigure figure,
