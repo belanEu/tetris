@@ -15,6 +15,7 @@ namespace controller
 				{
 					cout << ' ' << figure.getTetraminoSquares()[i * figure.getSize() + j].getColor() << ' ';
 				}
+
 				cout << endl;
 			}
 		}

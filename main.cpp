@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 #include <bitset>
 #include "LTetraminoFigure.h"
 #include "JTetraminoFigure.h"
@@ -67,78 +68,17 @@ int main()
 
     Display::displayGameIteration(glassInstance, coordinator);
 
-/*
-    Stacker::toStack(glassInstance, OFigure, coordinator);
 
-    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-    //glassInstance.printOut();
-    Display::displayGlass(glassInstance);
+    movementMaker.stepLeft(glassInstance, OFigure, coordinator);
+
+    Display::displayGameIteration(glassInstance, coordinator);
 
 
-    cout << endl << endl << endl;
+    movementMaker.stepLeft(glassInstance, OFigure, coordinator);
 
-    // step 2: L Figure stays on x=4, y=1
-    coordinator.setTetraminoFigureSize(LFigure.getSize());
-    coordinator.setXTetraminoFigure(int(glassInstance.getWidth() / 2) - int(LFigure.getSize() / 2) - (LFigure.getSize() & 1));
-    coordinator.setYTetraminoFigure(1);
-
-    Stacker::toStack(glassInstance, LFigure, coordinator);
-
-    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-    //glassInstance.printOut();
-
-    Display::displayGlass(glassInstance);
-
-    cout << endl << endl << endl;
-
-    // step 3: L Figure goes to x=2, y=2 using testCoordinator
-    Coordinator testCoordinator(glassInstance.getWidth(), glassInstance.getHeight());
-    testCoordinator.setTetraminoFigureSize(coordinator.getTetraminoFigureSize());
-    testCoordinator.setXTetraminoFigure(coordinator.getXTetraminoFigure() - 2);
-    testCoordinator.setYTetraminoFigure(coordinator.getYTetraminoFigure() + 1);
-
-    MovementAnalyzer movementAnalyzer;
-
-    movementAnalyzer.analyzeStep(glassInstance, LFigure, testCoordinator);
+    Display::displayGameIteration(glassInstance, coordinator);
 
 
-    if (movementAnalyzer.getResult())
-    {
-        Stacker::toDelete(glassInstance, LFigure, coordinator);
-
-        cout << endl << "Wow!" << endl;
-        coordinator.setTetraminoFigureSize(testCoordinator.getTetraminoFigureSize());
-        coordinator.setXTetraminoFigure(testCoordinator.getXTetraminoFigure());
-        coordinator.setYTetraminoFigure(testCoordinator.getYTetraminoFigure());
-        Stacker::toStack(glassInstance, LFigure, coordinator);
-
-        cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-        //glassInstance.printOut();
-        Display::displayGlass(glassInstance);
-
-        cout << endl << endl << endl;
-    }
-
-    movementAnalyzer.resetResult();
-
-    /*
-       TODO: test MovementAnalyzer!
-    */
-    /*MovementAnalyzer movementAnalyzer;
-
-    movementAnalyzer.analyzeStep(glassInstance, LFigure, coordinator);
-    bool iCanGoThere = movementAnalyzer.getResult();
-
-    if (iCanGoThere)
-    {
-        // TODO: toStack the figure into the glass
-    }
-
-    movementAnalyzer.resetResult();*/
-
-
-    cout << "The bit set of 5: " << bitset<10>(5).to_string() << endl;
-    cout << "The bit set to number: " << (unsigned short)bitset<10>("1111111111").to_ulong() << endl;
 
     cout << endl << "left rotated L Figure:" << endl << endl;
     Rotator::leftRotate(&LFigure);
@@ -169,6 +109,7 @@ int main()
 
     cout << "O Figure:" << endl << endl;
     Display::displayFigure(OFigure);
+
     cout << endl << endl;
 
 	return 0;

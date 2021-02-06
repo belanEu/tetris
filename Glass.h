@@ -11,7 +11,7 @@ namespace glass
 	protected:
 		int width,
 			height;
-		bool* state = NULL;
+		bool* state = nullptr;
 
     public:
 		Glass(int width, int height)

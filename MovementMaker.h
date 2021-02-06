@@ -15,7 +15,7 @@ namespace controller
     class MovementMaker
     {
     protected:
-        MovementAnalyzer* movementAnalyzer = NULL;
+        MovementAnalyzer* movementAnalyzer = nullptr;
 
     public:
         MovementMaker()
