@@ -11,7 +11,7 @@ namespace tetramino_figure
 	{
 	protected:
 		int size;
-		TetraminoSquare* figureSquares;
+		TetraminoSquare* figureSquares = NULL;
 
 	protected:
 		void initializeFigure();

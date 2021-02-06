@@ -1,4 +1,5 @@
 #include "Glass.h"
+#include "Coordinator.h"
 using namespace glass;
 
 namespace controller
@@ -18,9 +19,14 @@ namespace controller
 			}
 		}
 
+		static void displayFigureCoordinates(Coordinator coordinator)
+		{
+		    cout << "Figure x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure();
+		}
+
 		static void displayGlass(Glass glassInstance)
 		{
-		    cout << ' ';
+		    cout << "    ";
             for (int i = 1; i < glassInstance.getWidth() - 1; i++)
             {
                 cout << ' ' << i << ' ';
@@ -29,7 +35,11 @@ namespace controller
 
             for (int i = 1; i < glassInstance.getHeight() - 1; i++)
             {
-                cout << '|';
+                if (i < 10)
+                {
+                    cout << ' ';
+                }
+                cout << i << " |";
                 for (int j = 1; j < glassInstance.getWidth() - 1; j++)
                 {
                     cout << ' ' << glassInstance.getState()[i * glassInstance.getWidth() + j] << ' ';
@@ -38,7 +48,7 @@ namespace controller
 
                 cout << endl;
             }
-            cout << '|';
+            cout << "   |";
             for (int j = 1; j < glassInstance.getWidth() - 1; j++)
             {
                 cout << "___";
@@ -46,9 +56,19 @@ namespace controller
             cout << '|';
 		}
 
-		static void displayGlassParametrs(Glass glassInstance)
+		static void displayGlassParameters(Glass glassInstance)
 		{
-		    cout << "\n\nGlass width: " << glassInstance.getWidth() << ", height: " << glassInstance.getHeight() << "\n\n";
+		    cout << "Glass width: " << glassInstance.getWidth() << ", height: " << glassInstance.getHeight();
+		}
+
+		static void displayGameIteration(Glass glassInstance, Coordinator coordinator)
+		{
+		    Display::displayGlassParameters(glassInstance);
+		    cout << endl;
+		    Display::displayFigureCoordinates(coordinator);
+		    cout << "\n\n";
+		    Display::displayGlass(glassInstance);
+		    cout << "\n\n\n";
 		}
 	};
 }

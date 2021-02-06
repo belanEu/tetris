@@ -40,50 +40,32 @@ int main()
 
     Stacker::toStack(glassInstance, OFigure, coordinator);
 
-    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-    Display::displayGlassParametrs(glassInstance);
-    Display::displayGlass(glassInstance);
-    cout << endl << endl << endl;
-
-    movementMaker.stepDown(glassInstance, OFigure, coordinator);
-
-    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-    Display::displayGlassParametrs(glassInstance);
-    Display::displayGlass(glassInstance);
-    cout << endl << endl << endl;
+    Display::displayGameIteration(glassInstance, coordinator);
 
 
     movementMaker.stepDown(glassInstance, OFigure, coordinator);
 
-    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-    Display::displayGlassParametrs(glassInstance);
-    Display::displayGlass(glassInstance);
-    cout << endl << endl << endl;
+    Display::displayGameIteration(glassInstance, coordinator);
+
+
+    movementMaker.stepDown(glassInstance, OFigure, coordinator);
+
+    Display::displayGameIteration(glassInstance, coordinator);
 
 
     movementMaker.stepLeft(glassInstance, OFigure, coordinator);
 
-    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-    Display::displayGlassParametrs(glassInstance);
-    Display::displayGlass(glassInstance);
-    cout << endl << endl << endl;
+    Display::displayGameIteration(glassInstance, coordinator);
 
 
     movementMaker.stepLeft(glassInstance, OFigure, coordinator);
 
-    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-    Display::displayGlassParametrs(glassInstance);
-    Display::displayGlass(glassInstance);
-    cout << endl << endl << endl;
+    Display::displayGameIteration(glassInstance, coordinator);
 
 
     movementMaker.stepLeft(glassInstance, OFigure, coordinator);
 
-    cout << "x: " << coordinator.getXTetraminoFigure() << ", y: " << coordinator.getYTetraminoFigure() << endl << endl;
-    Display::displayGlassParametrs(glassInstance);
-    Display::displayGlass(glassInstance);
-
-    cout << endl << endl << endl;
+    Display::displayGameIteration(glassInstance, coordinator);
 
 /*
     Stacker::toStack(glassInstance, OFigure, coordinator);
