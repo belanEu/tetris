@@ -34,7 +34,7 @@ int main()
 
     Coordinator coordinator(glassInstance.getWidth(), glassInstance.getHeight());
 
-    // step 1: O Figure stays on x = 5, y = 4
+    // step 1: O Figure stays on x=5, y=4
     coordinator.setTetraminoFigureSize(OFigure.getSize());
     coordinator.setXTetraminoFigure(int(glassInstance.getWidth() / 2) - int(OFigure.getSize() / 2) - (OFigure.getSize() & 1));
     coordinator.setYTetraminoFigure(4);
